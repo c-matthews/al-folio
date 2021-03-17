@@ -8,6 +8,9 @@ layout: default
     <h1 class="post-title">
      {% if site.title == "blank" %}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{% else %}{{ site.title }}{% endif %}
     </h1>
+    <h6>
+      🔗 <a href="http://www.cmatthe.ws">www.cmatthe.ws</a>
+      </h6>
      <p class="desc">{{ page.description }}</p>
   </header>
 
@@ -15,7 +18,7 @@ layout: default
     {% if page.profile %}
     <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
       {% if page.profile.image %}
-        <img class="img-fluid z-depth-1 rounded" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}">
+        <img class="img-fluid z-depth-1 rounded" width=100 src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}">
       {% endif %}
       {% if page.profile.address %}
         <div class="address">

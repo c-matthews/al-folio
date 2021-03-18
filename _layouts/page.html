@@ -5,8 +5,33 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
+    <div class="post-description">{{ page.description }}
+    <div class="row ml-1 mr-1 p-0">
+      {% if page.github %}
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Code Repository">
+          <a href="{{ page.github }}" style="margin-left:10px;" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+        </div>
+      </div>
+      {% endif %}
+      {% if page.repo %}
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Code Repository">
+          <a href="{{ page.repo }}" style="margin-left:10px;" target="_blank"><i class="fas fa-cloud-download-alt"></i></a>
+        </div>
+      </div>
+      {% endif %}
+      {% if page.pdf %}
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Article Link">
+          <a href="{{ page.pdf }}" style="margin-left:10px;" target="_blank"> <i class="far fa-file-pdf"></i></a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    </div>
   </header>
+
 
   <article>
     {{ content }}

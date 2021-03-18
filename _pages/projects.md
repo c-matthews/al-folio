@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: A collection of some of the projects that I've worked on.
 nav: true
 ---
 
@@ -21,20 +21,28 @@ nav: true
         <img src="{{ project.img | relative_url }}" alt="project thumbnail">
         {% endif %}
         <div class="card-body">
-          <h2 class="card-title text-lowercase">{{ project.title }}</h2>
+          <h4 class="card-title" style="color:black;">{{ project.title }}</h4>
           <p class="card-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {% if project.github %}
             <div class="github-icon">
               <div class="icon" data-toggle="tooltip" title="Code Repository">
-                <a href="{{ project.github }}" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+                <a href="{{ project.github }}" style="margin-left:10px;" target="_blank"><i class="fab fa-github gh-icon"></i></a>
               </div>
-              {% if project.github_stars %}
-              <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                <i class="fas fa-star"></i>
-                <span id="{{ project.github_stars }}-stars"></span>
-              </span>
-              {% endif %}
+            </div>
+            {% endif %}
+            {% if project.repo %}
+            <div class="github-icon">
+              <div class="icon" data-toggle="tooltip" title="Code Repository">
+                <a href="{{ project.repo }}" style="margin-left:10px;" target="_blank"><i class="fas fa-cloud-download-alt"></i></a>
+              </div>
+            </div>
+            {% endif %}
+            {% if project.pdf %}
+            <div class="github-icon">
+              <div class="icon" data-toggle="tooltip" title="Article Link">
+                <a href="{{ project.pdf }}" style="margin-left:10px;" target="_blank"> <i class="far fa-file-pdf"></i></a>
+              </div>
             </div>
             {% endif %}
           </div>

@@ -23,6 +23,6 @@ __Current position__: Lead data scientist at [Fuelbetter Technologies](https://w
 
 I obtained my PhD in Applied Mathematics in 2013, working on splitting methods for Langevin Dynamics (see my thesis [here](https://era.ed.ac.uk/handle/1842/8949){:target="\_blank"}). I was a postdoc in Statistics at The University of Chicago (2014-2018) and a postdoc in Machine Learning methods at The University of Edinburgh (2018-2019).
 
-I enjoy working on practical problems at the intersection of mathematics and computer science. In the past I've worked on novel integration methods for molecular dynamics, Bayesian sampling schemes for cosmology, modeling cascade failures in power networks, and training neural networks for renewable energy.
+I enjoy working on practical problems at the intersection of mathematics and computer science. In the past I've worked on novel integration methods for [molecular dynamics](projects/md_with_constraints/){:target="\_blank"}, Bayesian sampling schemes for [cosmology](projects/umbrella/){:target="\_blank"}, modeling cascade failures in [power networks](projects/cascades/){:target="\_blank"}, and training [neural networks for renewable energy](projects/adlala/){:target="\_blank"}.
 
 I mostly write code in Python (Python 3, Jupyter, Cython) but can be found also developing in C/C++/C# where needed. Experienced in SQL, Matlab, Fortran, Java, and Javascript as well. I deploy code using Git and Docker, to servers in the cloud in AWS or SLURM or Sun Grid.

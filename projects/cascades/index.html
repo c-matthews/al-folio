@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Charles Matthews</title>
+<title>Charles Matthews | Cascade failure in power networks</title>
 <meta name="description" content="The website of Charles Matthews, based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/cascades/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -147,18 +147,71 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Cascade failure in power networks</h1>
+    <div class="post-description">Simulating the non-equilibrium dynamics of large electrical power networks
+    <div class="row ml-1 mr-1 p-0">
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Code Repository">
+          <a href="https://github.com/c-matthews/pypower" style="margin-left:10px;" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+        </div>
+      </div>
+      
+      
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Article Link">
+          <a href="https://arxiv.org/abs/1806.02420" style="margin-left:10px;" target="_blank"> <i class="far fa-file-pdf"></i></a>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+  </header>
 
 
-  <ul class="post-list">
-    
-  </ul>
+  <article>
+    <p>For  large-scale  electrical power  networks,  the  failure  of  particular  transmission  lines  can  offload  power  to  other  lines  and cause  self-protection  trips  to  activate,  instigating  a  cascade  of line  failures.  In  extreme  cases,  this  can  bring  down  the  entire network. Learning where the vulnerabilities are and the expected timescales  for  which  failures  are  likely  is  an  active  area  of research.  This project uses a  novel  stochastic  dynamics model  for  modelling the dynamics of   power  networks  along  with  a  framework for  efficient  computer  simulation  of  the  model’s development,  including  long timescale events such as cascade failure. We build on an existing Hamiltonian  formulation  and  introduce  stochastic  forcing  and damping  components  to  simulate  small  perturbations  to  the network. Our model and simulation framework allow assessment of  the  particular  weaknesses  in  a  power  network  that  make it  susceptible  to  cascade  failure,  along  with  the  timescales  and mechanism  for  expected  failures.</p>
 
-  
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/power_network.png" alt="" title="" />
+    </div>
+</div>
+<div class="caption">
+    A graphical representation of the benchmark power network used in our tests. There are 145buses  (95  load  buses  as  green  circles,  49  generators  as  red  squares,  and  one slack bus as a blue square) connected by 453 power lines.
+</div>
 
+<p>Our motivation for introducing the stochastic dynamics is to gather statistics and classify failures of  the  network.  The  most  common  way  to  approximate  the behavior of a physical network at a failure point is to mimic the  responses  of  the  thermal  relay  on  each  power  line,  by removing  a  line  from  service  when  the  energy  on  the  line becomes too large.</p>
+
+<p>We  model  the  failure  dynamics  as  an  irreversible  change that alters network topology and moves the system’s equilibrium point \(x_\text{eq}\).  An  interesting  feature  of  our  formalism  is  that we  can  capture  the  timescale  and  trajectory  of  the  system  as it  transitions  between  neighborhoods  of \(x_\textrm{eq}^{\textrm{(old})}\) to \(x_\textrm{eq}^{\textrm{(new})}\), which  correspond  to  the  stable  regions  before  and  after  a line failure.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/power2.png" alt="" title="" />
+    </div>
+</div>
+<div class="caption">
+    We simulate the dynamics of the power network, with a given threshold at which the line protection activates. After the first failure, the network shortly collapses.
+</div>
+
+<p>Since the goal of our modeling is to probe the statistics of the system as it evolves, we seek to generate a large number of  trajectories  by  solving  the proposed dynamics.  Because  of  the dimensionality of the state \(x\) and the complexity of the Hamiltonian  defining  the  dynamics,  finding  analytical  solutions  is not  feasible.  We  turn  instead  to  a  numerical  timestepping algorithm with time discretization parameter (timestep) \(h &gt;0\) to advance from \(x(t)\) to \(x(t+h)\). The parameter \(h\) is usually chosen  after  some  experimentation – too  small  a  choice  increases the computational effort required to simulate to until failure (the <em>hitting time</em>), while increasing \(h\) can create instability in the system or a large error in observed average times.</p>
+
+<p>We look at solving the dynamics using multiple different methods, implemented in a Python package (given below).</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/power3.png" alt="" title="" />
+    </div>
+</div>
+<div class="caption">
+    The errors using the Hamiltonian formulation with multiple schemes. The L-M method (Leimkuhler-Matthews method) is particularly efficient.
+</div>
+
+<p>With an accurate numerical method, we experiment with manual disconnection of lines to locate weak points in the network, and using clustering algorithms to qualify the phase changes in the state.  We also use the Parallel Replica method (often used in Computational Chemistry) to compute accurate hitting times efficiently.  Check out the <a href="https://github.com/c-matthews/pypower">code</a> and the <a href="https://arxiv.org/abs/1806.02420">article</a> for more information.</p>
+
+  </article>
 
 </div>
 

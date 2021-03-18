@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Charles Matthews</title>
+<title>Charles Matthews | NOGIN</title>
 <meta name="description" content="The website of Charles Matthews, based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/nogin/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -147,18 +147,74 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">NOGIN</h1>
+    <div class="post-description">The NOisy Gradient INtegrator ~ A sampling scheme for high-dimensional problems with stochastic gradients
+    <div class="row ml-1 mr-1 p-0">
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Code Repository">
+          <a href="https://github.com/c-matthews/nogin" style="margin-left:10px;" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+        </div>
+      </div>
+      
+      
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Article Link">
+          <a href="https://arxiv.org/pdf/1805.08863.pdf" style="margin-left:10px;" target="_blank"> <i class="far fa-file-pdf"></i></a>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+  </header>
 
 
-  <ul class="post-list">
-    
-  </ul>
+  <article>
+    <p>A commonly encountered problem in data science and machine learning applications is the sampling of parameters \(\theta \in \mathbb{R}^D\) from a product distribution over a dataset \(y\) containing \(N\) observations \(y_i\). Combined with a regularizing prior distribution \(\pi_0(\theta)\), the aim is to generate points distributed according to the target distribution \(\pi(\theta)\) where</p>
 
-  
+\[\pi(\theta) \propto \pi_0(\theta) \prod_y \pi(y_i | \theta).\]
 
+<p>Such a formulation is commonplace in (e.g.) Bayesian inverse applications, where \(\pi(\theta)\) is referred to as the target <em>posterior distribution</em>. We often make moves in space using the gradient of the log-posterior (known as the <em>force</em>)</p>
+
+\[F(\theta) := \nabla \log \pi_0(\theta) + \sum_{i=1}^N \log\pi(y_i|\theta),\]
+
+<p>but this can be expensive if the number of datapoints \(N\) is very large. Only evaluating the force over a subset (or a <em>batch</em>) of data can make for a considerable efficiency saving, but we must balance the cost of the error introduced from not correctly computing the total gradient.</p>
+
+<p>In this project, we assume we have some stochastic gradient \(\widetilde{F}(\theta)\) with the property that the gradient is normally distributed where</p>
+
+\[\widetilde{F}(\theta) \sim  N(F(\theta),\,\Sigma(\theta))\]
+
+<p>for some positive semi-definite matrix \(\Sigma(\theta)\). Assuming we can obtain the covariance \(\Sigma(\theta)\), or some low-rank approximation to it, we can damp the additional noise introduced by the stochastic gradient and recover high-order sampling. We give the proposed algorithm below.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/nogalg.png" alt="" title="" />
+    </div>
+</div>
+<div class="caption">
+    The Noisy Gradient Integrator (NOGIN) algorithm.
+</div>
+
+<p>This algorithm accurately integrates the Ornstein-Uhlenbeck process with the additional gradient force. This means that in the case of a true-Gaussian stochastic gradient, and where the log posterior is quadratic, <em>the NOGIN scheme gives no error at all</em>! This is an especially nice property as it has been shown that in the limit of a large amount of data, posteriors approach a Gaussian distribution.</p>
+
+<p>We demonstrate the power of the scheme by comparing the results against five other schemes (see the <a href="https://arxiv.org/pdf/1805.08863.pdf">article</a> for details). We look at the errors in the computed parameter variances as a function of the number of full passes through the dataset (epochs). We compare the results from using different batch sizes (the batch size is fixed for each run) to demonstrate the gain in efficiency.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/nogin_mnist.png" alt="" title="" />
+    </div>
+</div>
+<div class="caption">
+    The results comparing NOGIN to five other state of the art schemes on a Bayesian Logistic Regression problem for the MNIST dataset with 12214 total datapoints. The error is shown as a function of simulation time (epoch) and the batch size, with blue indicating a low error.
+</div>
+
+<p>The results show the optimum choice is to use around \(1\%\) data per batch, with a significant improvement coming from the NOGIN scheme.</p>
+
+<p>Check out the <a href="https://github.com/c-matthews/nogin">code</a> and the <a href="https://arxiv.org/pdf/1805.08863.pdf">article</a> for more information. Also take a look at another stochastic gradient scheme I have worked on, called <a href="/projects/racecar/">RACECAR</a>.</p>
+
+  </article>
 
 </div>
 

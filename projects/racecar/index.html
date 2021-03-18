@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Charles Matthews</title>
+<title>Charles Matthews | Racecar</title>
 <meta name="description" content="The website of Charles Matthews, based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/racecar/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -147,18 +147,47 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Racecar</h1>
+    <div class="post-description">Sampling high-dimensional problems using efficient, on-the-fly estimations of the stochastic gradient noise
+    <div class="row ml-1 mr-1 p-0">
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Code Repository">
+          <a href="https://github.com/c-matthews/racecar#readme" style="margin-left:10px;" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+    </div>
+  </header>
 
 
-  <ul class="post-list">
-    
-  </ul>
+  <article>
+    <p>Racecar is a lightweight Python library for sampling distributions in high dimensions using cutting-edge algorithms. It can also be used for rapid prototyping of novel methods and application to high dimensional use-cases. Pass a function evaluating the log posterior and/or its gradient, and away you go! Designed for use with stochastic gradients in mind. Ideal for usage with big data applications, neural networks, regression, mixture modelling, and all sorts of Bayesian inference and sampling problems.</p>
 
-  
+<p>Easily installed with <strong>pip</strong> via</p>
 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>racecar
+</code></pre></div></div>
+<p>The algorithm learns the gradient noise covariance on-the-fly, and uses the learned representation to damp the dynamics and improve the sampling properties. At no extra computational cost, it offers a significant improvement over state of the art methods like SGHMC or SGLD.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="https://raw.githubusercontent.com/c-matthews/racecar/main/img/example_result.png" alt="" title="Sampling results" />
+    </div>
+</div>
+<div class="caption">
+    An example comparing the experimental results (in black) to the true results (in red).
+</div>
+
+<p>The name <em>RACECAR</em> comes from the splitting of the Langevin dynamics into pieces A,C,E and R, and solving them in a palendromic order.</p>
+
+<p>Check out the <a href="https://github.com/c-matthews/racecar#readme">code</a> and try out the algorithm and examples. Also take a look at another stochastic gradient scheme I have worked on, called <a href="/projects/nogin/">NOGIN</a>.</p>
+
+  </article>
 
 </div>
 

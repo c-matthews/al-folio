@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Charles Matthews</title>
+<title>Charles Matthews | AdLaLa</title>
 <meta name="description" content="The website of Charles Matthews, based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/adlala/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -147,18 +147,38 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">AdLaLa</h1>
+    <div class="post-description">Efficient training of neural networks using Adaptive Langevin in Layers
+    <div class="row ml-1 mr-1 p-0">
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Code Repository">
+          <a href="https://github.com/TiffanyVlaar/ThermodynamicParameterizationOfNNs" style="margin-left:10px;" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+        </div>
+      </div>
+      
+      
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Article Link">
+          <a href="http://dx.doi.org/10.3934/fods.2019019" style="margin-left:10px;" target="_blank"> <i class="far fa-file-pdf"></i></a>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+  </header>
 
 
-  <ul class="post-list">
-    
-  </ul>
+  <article>
+    <p>Traditionally, neural networks are parameterized using optimization procedures such as stochastic gradient descent, RMSProp and ADAM. These are optimization schemes, meant to drive the system towards a minimum. We propose alternative <em>sampling</em> algorithms (referred to in the article as “thermodynamic parameterization methods”) which rely on discretized stochastic differential equations for a defined target distribution on parameter space. The purpose of this project is to show that the thermodynamic perspective already improves neural network training, and by partitioning the parameters based on natural layer structure we obtain schemes with very rapid convergence for data sets with complicated loss landscapes.</p>
 
-  
+<p>We describe easy-to-implement hybrid partitioned numerical algorithms, based on discretized stochastic differential equations, which are adapted to feed-forward neural networks, including a multi-layer Langevin algorithm, AdLaLa (combining the adaptive Langevin and Langevin algorithms) and LOL (combining Langevin and Overdamped Langevin); we examine the convergence of these methods using numerical studies and compare their performance among themselves and in relation to standard alternatives such as stochastic gradient descent and ADAM. We present evidence that thermodynamic parameterization methods can be (ⅰ) faster, (ⅱ) more accurate, and (ⅲ) more robust than standard algorithms used within machine learning frameworks</p>
 
+<p>Check out the <a href="https://github.com/TiffanyVlaar/ThermodynamicParameterizationOfNNs">code</a> and the <a href="http://dx.doi.org/10.3934/fods.2019019">article</a> for more information.</p>
+
+  </article>
 
 </div>
 

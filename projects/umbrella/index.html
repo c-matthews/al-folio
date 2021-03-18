@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Charles Matthews | Umbrella sampling for cosmology</title>
+<meta name="description" content="The website of Charles Matthews, based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📛</text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/projects/umbrella/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+  <!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       Charles Matthews
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                projects
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Umbrella sampling for cosmology</h1>
+    <div class="post-description">Performing MCMC in parallel for Bayesian Inverse problems in cosmology
+    <div class="row ml-1 mr-1 p-0">
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Code Repository">
+          <a href="https://github.com/c-matthews/usample" style="margin-left:10px;" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+        </div>
+      </div>
+      
+      
+      
+      <div class="github-icon">
+        <div class="icon" data-toggle="tooltip" title="Article Link">
+          <a href="https://doi.org/10.1093/mnras/sty2140" style="margin-left:10px;" target="_blank"> <i class="far fa-file-pdf"></i></a>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+  </header>
+
+
+  <article>
+    <p>This project uses umbrella sampling (US) on a cosmology model to sample extremely low-probability areas of the posterior distribution that may be required in statistical analyses of data. The technique is tested on deriving cosmological constraints using the supernova type Ia data. We show that US can sample the posterior \(\pi(x)\) accurately down to the \(\approx15\sigma\) credible region in the \(\Omega_m-\Omega_\Lambda\) plane, while for the same computational effort the affine-invariant MCMC sampling implemented in the popular emcee code samples the posterior reliably only to \(\approx3\sigma\).</p>
+
+<p>In the US algorithm, sampling of the posterior is split (or <em>stratified</em>) into several easier sampling problems (see the Figure below). Specifically, a sequence of overlapping window functions, or umbrellas \(\psi_i(x)\), is introduced and the algorithm samples the corresponding distributions, \(\pi_i(x)\propto \psi_i(\theta)\pi(x)\). Selecting windows in low-probability regions of the posterior and thereby confining samples of \(\pi_i\) to these regions, allows one to get a much more efficient coverage of outlying areas of the posterior and ensure discovery of widely separated peaks in multimodal distributions. In this sense, the US approach is a part of a large class of MCMC methods that are designed to sample the parameter space more uniformly, such as parallel tempering   and parallel MCMC.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/m_sty2140fig1.jpeg" alt="" title="Umbrella Sampling example" />
+    </div>
+</div>
+<div class="caption">
+    Umbrella Sampling splits the difficult problem of sampling the posterior (black curve) into smaller, simpler subproblems (coloured curves, bottom) by introducing  biasing "umbrella" functions (coloured curves, top). The  sub-distributions can be sampled independently in parallel, with the overall posterior recovered as a weighted sum of samples
+</div>
+
+<p>Clearly, the approach is most effective when we have some knowledge about the low-probability regions of the target distribution, as umbrellas can be designed specifically to sample these regions efficiently. Such information is often available either from prior intuition about the overall problem or from exploratory MCMC runs. We may use a collective variable (CV) to bias the simulation in a specific direction.</p>
+
+<p>However US can be efficiently applied even in cases when no such prior information is available. In this case umbrella windows can be chosen so that the \(\pi_i\) correspond to tempered distributions, defined as in the Parallel Tempering method. US provides a mechanism by which samples from the high-temperature distributions (in low-probability regions) can be incorporated into more accurate estimates of tail probabilities.</p>
+
+<p>To illustrate the power of the US algorithm to accurately sample the tails of the marginal posterior distribution, we use cosmological constraints derived from type Ia supernovae observations. Specifically, we sample the marginal posterior of the mean dimensionless matter and vacuum energy densities, \(\Omega_m\) \(\Omega_\Lambda\)⁠, using the SDSS-II/SNLS3 Joint Light-curve Analysis (JLA) supernovae data set and the associated JLA v3 likelihood.</p>
+
+<p>Type Ia supernovae are one of the key probes of the cosmological parameters governing expansion of the Universe and played the main role in the discovery of the accelerating expansion of the Universe. The current supernovae samples, such as the JLA data set, cover a wide range of redshifts and provide complimentary constraints to those derived from the Cosmic Microwave Background and the Baryonic Acoustic Oscillations measurements.</p>
+
+<p>We test two different parameterizations of windows in the US approach: temperature stratification only and a combination of the temperature stratification with a CV. The latter is possible in this case because we are interested in estimating the probability that the Universe is not accelerating, and we can define the CV in the direction perpendicular to the line separating accelerating and non-accelerating universes: \(\Omega_m/2−\Omega_\Lambda=0\)⁠.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/cosmo1.png" alt="" title="Results for emcee" />
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/cosmo2.png" alt="" title="Results for US using temperature" />
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/cosmo3.png" alt="" title="Results for US using a CV" />
+    </div>
+</div>
+<div class="caption">
+    The iso-density contours of the sampled marginal posterior distribution using the JLA v3 likelihood. The solid lines show the computed iso-significance contours of the posterior up to 15 sigma levels, while the dotted lines give the corresponding contours for a Gaussian approximation of the posterior.
+</div>
+
+<p>The Figure shows results of sampling the JLA v3 likelihood in six-dimensional parameter space using the Goodman &amp; Weare  algorithm implemented in the  <a href="https://github.com/dfm/emcee">emcee package</a>, and US with different choices of the umbrella partition. Here, we sample the JLA v3 likelihood using the <a href="https://bitbucket.org/joezuntz/cosmosis/wiki/Home">COSMOSIS package</a> to which we have added the US sampler. In each case, the sampling was done using the same number of likelihood evaluations and same computer wall time.</p>
+
+<p>The runs using <em>emcee</em> used all 32 available cores in parallel. The US runs used 16 windows sampled in parallel, each with two cores that also worked in parallel. This gave the US results the same parallel efficiency as the emcee sampler. An MPI pool object was used to na"ively distribute the tasks evenly, without any load balancing.</p>
+
+<p>The results obtained using US with only temperature show a higher variance than results using CVs, as is evident from the spikier and less-defined contours at the furthest sigma levels. This is simply because umbrella windows with the CV stratified, ensure that a fixed number of walkers sample the low-probability areas of the posterior in the  plane, while in the temperature windows walkers explore the entirety of the parameter space without any restraints.</p>
+
+<p>The faint dotted lines correspond to the contours assuming a Gaussian approximation of the posterior. The sampled log-likelihood surface was fit to a quadratic form using the Matlab <em>fit</em> function, and its corresponding sigma levels plotted. Although the initial agreement up to the third contour is good, it is clear that the Gaussian approximation fails to accurately describe the tails of the posterior. The sampled surface obtained from US shows that there exists a much ‘fatter’ tail compared to the Gaussian.</p>
+
+<p>Check out the <a href="https://github.com/c-matthews/usample">code</a> and the <a href="https://doi.org/10.1093/mnras/sty2140">article</a> for more information.</p>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container">
+    &copy; Copyright 2021 Charles  Matthews.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>

@@ -4,7 +4,7 @@ title: Racecar
 description: Sampling high-dimensional problems using efficient, on-the-fly estimations of the stochastic gradient noise
 img: https://raw.githubusercontent.com/c-matthews/racecar/main/img/logo.png
 importance: 1
-github: https://github.com/c-matthews/racecar
+github: https://github.com/c-matthews/racecar#readme
 ---
 
 Racecar is a lightweight Python library for sampling distributions in high dimensions using cutting-edge algorithms. It can also be used for rapid prototyping of novel methods and application to high dimensional use-cases. Pass a function evaluating the log posterior and/or its gradient, and away you go! Designed for use with stochastic gradients in mind. Ideal for usage with big data applications, neural networks, regression, mixture modelling, and all sorts of Bayesian inference and sampling problems.
@@ -27,4 +27,4 @@ The algorithm learns the gradient noise covariance on-the-fly, and uses the lear
 
 The name _RACECAR_ comes from the splitting of the Langevin dynamics into pieces A,C,E and R, and solving them in a palendromic order.
 
-Check out the [code](https://github.com/c-matthews/racecar) and try out the algorithm and examples. Also take a look at another stochastic gradient scheme I have worked on, called [NOGIN](/projects/nogin/).
+Check out the [code](https://github.com/c-matthews/racecar#readme) and try out the algorithm and examples. Also take a look at another stochastic gradient scheme I have worked on, called [NOGIN](/projects/nogin/).
